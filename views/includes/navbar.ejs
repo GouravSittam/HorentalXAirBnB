@@ -1,0 +1,74 @@
+<nav class="navbar navbar-expand-lg bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/home"><img src="../img/confort-logo.png" width="100px" height="80px"
+        alt="Confort logo"></a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
+      <form class="m-auto d-flex my-2 my-lg-0 position-absolute top-50 start-50 translate-middle">
+        <input class="form-control me-2 search-input" type="search" placeholder="Search Destinations">
+        <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+      </form>
+      
+      <div class="navbar-nav">
+        <a class="nav-link" href="/home">Home</a>
+        <a class="nav-link" href="/listings">Explore</a>
+        <a class="nav-link" href="/listings/new">List your home</a>
+      </div>
+
+      
+
+      <div class="navbar-nav ms-auto nav-left">
+        <% if(!currUser) { %>
+        <a class="nav-link" href="/signup"><b>Sign Up</b></a>
+        <a class="nav-link" href="/login"><b>Login</b></a>
+        <% } %>
+        <% if(currUser) { %>
+        <a class="nav-link" href="/logout"><b>Log Out</b></a>
+        <% } %>
+        <a href="/book" class="btn edit-btn py-2">Book now</a>
+      </div>
+
+    </div>
+    
+  </div>
+</nav>
+
+<style>
+  @media (max-width: 991.98px) {
+    .navbar-nav {
+      text-align: center;
+    }
+    .navbar-nav .nav-link {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+    .form-control {
+      width: 100%;
+    }
+    .btn-outline-success {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+  }
+  @media (max-width: 770px) {
+    .form-control {
+      margin-bottom: 0.5rem;
+    }
+    .navbar-nav {
+      flex-direction: column;
+    }
+  }
+  @media (min-width: 197px) and (max-width: 992px) {
+    .navbar-brand img {
+      margin-top: -10px;
+      height: 75px;
+    }
+  }
+  
+
+</style>
